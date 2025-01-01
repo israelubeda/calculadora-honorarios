@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Boleta de Honorarios</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .result-card {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Boleta de Honorarios</h1>
+        <p class="text-center">Calcula de manera sencilla el monto líquido, la retención y el monto bruto según las tasas actualizadas de 2023 a 2028.</p>
+        
+        <form method="post" class="mt-4">
+            <div class="mb-3">
+                <label for="calculation_type" class="form-label">¿Cómo quieres calcular tu boleta?</label>
+                <select name="calculation_type" id="calculation_type" class="form-select" required>
+                    <option value="liquid">Tengo el valor líquido</option>
+                    <option value="gross">Tengo el valor bruto</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="retention" class="form-label">Seleccione la retención:</label>
+                <select name="retention" id="retention" class="form-select" required>
+                    {% for label, rate in retentions.items() %}
+                        <option value="{{ label }}">{{ label }} ({{ (rate * 100) | round(2) }}%)</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="amount" class="form-label">Ingrese el monto:</label>
+                <input type="number" step="0.01" name="amount" id="amount" class="form-control" placeholder="Ej: 175000" required>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Calcular</button>
+            </div>
+        </form>
+
+        {% if result %}
+            <div class="result-card mt-4">
+                {% if result.error %}
+                    <p class="text-danger"><strong>Error:</strong> {{ result.error }}</p>
+                {% else %}
+                    <h2>Resultados</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Monto Líquido:</strong> ${{ result.liquid_amount }}</li>
+                        <li class="list-group-item"><strong>Retención ({{ result.retention_label }}):</strong> ${{ result.retention_amount }}</li>
+                        <li class="list-group-item"><strong>Monto Bruto Boleta de Honorarios:</strong> ${{ result.gross_amount }}</li>
+                        <li class="list-group-item"><strong>Porcentaje de Retención Aplicado:</strong> {{ result.rate }}%</li>
+                        <li class="list-group-item"><strong>Tipo de Retención Seleccionado:</strong> {{ result.retention_label }}</li>
+                    </ul>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
