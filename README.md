@@ -39,6 +39,8 @@
 ├── static/                # (Opcional) Archivos CSS o JS adicionales
 └── README.md              # Este archivo
 
+```
+
 ## 🛠️ Instalación y Configuración
 1. Requisitos Previos
 
