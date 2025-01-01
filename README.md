@@ -39,7 +39,7 @@
 ├── static/                # (Opcional) Archivos CSS o JS adicionales
 └── README.md              # Este archivo
 
-🛠️ Instalación y Configuración
+## 🛠️ Instalación y Configuración
 1. Requisitos Previos
 
     Python 3.8 o superior
@@ -61,7 +61,8 @@ python app.py
 5. Abrir en el Navegador
 
 Accede a la aplicación en: http://127.0.0.1:5000/
-🎨 Personalización
+
+## 🎨 Personalización
 Cambiar las Tasas de Retención
 
 Las tasas de retención están definidas en el archivo app.py. Puedes actualizarlas en el diccionario RETENCIONES:
@@ -72,10 +73,11 @@ RETENCIONES = {
     ...
 }
 
-Diseño
+## Diseño
 
 El diseño utiliza Bootstrap 5, y puedes modificar el archivo templates/index.html para cambiar los estilos o agregar nuevas secciones.
-🖼️ Ejemplo de Uso
+
+## 🖼️ Ejemplo de Uso
 Paso 1: Selecciona el tipo de cálculo
 
 Elige si tienes el valor Líquido o el Bruto.
@@ -88,7 +90,7 @@ Introduce el valor (líquido o bruto) según el tipo de cálculo seleccionado.
 Paso 4: Presiona "Calcular"
 
 Se mostrarán los resultados con los valores calculados y detalles adicionales.
-🤝 Contribuciones
+## 🤝 Contribuciones
 
 ¡Las contribuciones son bienvenidas! Si deseas mejorar este proyecto, sigue estos pasos:
 
@@ -98,10 +100,11 @@ Se mostrarán los resultados con los valores calculados y detalles adicionales.
     Sube los cambios: git push origin mi-nueva-funcionalidad.
     Crea un pull request.
 
-📝 Licencia
+## 📝 Licencia
 
 Este proyecto está bajo la licencia MIT. Puedes usarlo libremente, siempre dando el crédito correspondiente. 🧑‍💻
-✨ Autor
+
+## ✨ Autor
 
 Desarrollado por Israel Ubeda
 📧 Contacto: israel.ubedabravo@gmail.com
