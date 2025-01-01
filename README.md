@@ -49,16 +49,22 @@
 
 2. Clonar el Repositorio
 
+```plaintext
 git clone https://github.com/israelubeda/calculadora-honorarios.git
 cd calculadora-honorarios
+```
 
 3. Instalar Dependencias
 
+```plaintext
 pip install flask
+```
 
 4. Ejecutar la Aplicación
 
+```plaintext
 python app.py
+```
 
 5. Abrir en el Navegador
 
