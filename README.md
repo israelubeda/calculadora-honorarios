@@ -47,7 +47,7 @@
 
 2. Clonar el Repositorio
 
-git clone https://github.com/tu-usuario/calculadora-honorarios.git
+git clone https://github.com/israelubeda/calculadora-honorarios.git
 cd calculadora-honorarios
 
 3. Instalar Dependencias
